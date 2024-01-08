@@ -1,110 +1,298 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/favicon-32x32.png"
+    />
+    <link href="../dist/output.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Frontend Mentor | Audiophile e-commerce website</title>
+  </head>
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+  <body class="bg-[#f1f1f1]">
+    <div class="">
+      <div>
+        <button class="font-semibold text-gray-500 font-sans">Go back</button>
+      </div>
+      <div class="flex justify-center">
+        <div
+          id="checkout-container"
+          class="bg-white p-10 rounded-lg mx-4 w-[800px]"
+        >
+          <div><h1 class="font-sans font-bold text-lg mb-6">CHECKOUT</h1></div>
+          <div>
+            <h6 class="font-sans text-sm font-bold text-subtitle">
+              BILLING DETAILS
+            </h6>
+          </div>
 
-  <title>Frontend Mentor | Audiophile e-commerce website</title>
-</head>
+          <!-- BILLING CONTAINER  -->
+          <div class="grid grid-cols-2 gap-3">
+            <div class="flex flex-col">
+              <label for="name" class="my-2 font-sans text-sm font-bold"
+                >Name</label
+              >
+              <input
+                type="text"
+                placeholder="Alexei Ward"
+                required
+                class="p-3 rounded-lg border-[1px] border-gray-300 focus:outline-none focus:border-focus text-sm text-black font-bold w-full"
+              />
+            </div>
 
-<body>
-  Home
-  Headphones
-  Speakers
-  Earphones
+            <div class="flex flex-col">
+              <label for="Phone number" class="my-2 font-sans text-sm font-bold"
+                >Phone Number</label
+              >
+              <input
+                type="text"
+                placeholder="+1 202-555-0136"
+                required
+                class="p-3 rounded-lg border-[1px] border-gray-300 focus:outline-none focus:border-focus text-sm text-black font-bold w-full"
+              />
+            </div>
 
-  
-  <!-- Cart Modal -->
-  Cart(3)
-  Remove All
+            <div class="flex flex-col">
+              <label
+                for="Email Address"
+                class="my-2 font-sans text-sm font-bold"
+                >Email Address</label
+              >
+              <input
+                type="text"
+                placeholder="alexei@mail.com"
+                required
+                class="p-3 rounded-lg border-[1px] border-gray-300 focus:outline-none focus:border-focus text-sm text-black font-bold w-full"
+              />
+            </div>
+          </div>
 
-  XX99 MK II x1
-  $2,999
-  
-  XX59 x2
-  $899
-  
-  YX1 x1
-  $599
-  
-  Total $5,396
+          <!-- SHIPPING CONTAINER  -->
+          <div class="mt-10">
+            <div>
+              <h4 class="font-sans text-sm font-bold text-subtitle">
+                SHIPPING INFO
+              </h4>
+            </div>
 
-  Checkout
-  <!-- Cart modal end -->
+            <div class="flex flex-col">
+              <label for="name" class="my-2 font-sans text-sm font-bold"
+                >Address</label
+              >
+              <input
+                type="text"
+                placeholder="1137 Williams Avenue"
+                required
+                class="p-3 rounded-lg border-[1px] border-gray-300 focus:outline-none focus:border-focus text-sm text-black font-bold w-full"
+              />
+            </div>
 
-  
-  Go back
+            <div class="grid grid-cols-2 gap-3">
+              <div class="flex flex-col">
+                <label for="" class="my-2 font-sans text-sm font-bold"
+                  >ZIPcode</label
+                >
+                <input
+                  type="text"
+                  placeholder="10001"
+                  required
+                  class="p-3 rounded-lg border-[1px] border-gray-300 focus:outline-none focus:border-focus text-sm text-black font-bold w-full"
+                />
+              </div>
 
-  Checkout
+              <div class="flex flex-col">
+                <label for="" class="my-2 font-sans text-sm font-bold"
+                  >City</label
+                >
+                <input
+                  type="text"
+                  placeholder="New York"
+                  required
+                  class="p-3 rounded-lg border-[1px] border-gray-300 focus:outline-none focus:border-focus text-sm text-black font-bold w-full"
+                />
+              </div>
 
-  Billing details
-  Name
-  Email address
-  Phone number
+              <div class="flex flex-col">
+                <label for="" class="my-2 font-sans text-sm font-bold"
+                  >Country</label
+                >
+                <input
+                  type="text"
+                  placeholder="United States"
+                  required
+                  class="p-3 rounded-lg border-[1px] border-gray-300 focus:outline-none focus:border-focus text-sm text-black font-bold w-full"
+                />
+              </div>
+              <!-- CONTROL OF THE IMPUT  -->
+            </div>
+          </div>
 
-  Shipping info
-  Address
-  ZIP code
-  City
-  Country
+          <!-- PAYMENT DETAILS -->
+          <div class="mt-10">
+            <div>
+              <h4 class="font-sans text-sm font-bold text-subtitle">
+                PAYMENT DETAILS
+              </h4>
+            </div>
 
-  Payment details
-  Payment method
-  e-Money
-  Cash on delivery
-  e-Money number
-  e-money PIN
+            <div class="grid grid-cols-2 gap-3">
+              <label class="my-2 font-sans text-sm font-bold"
+                >Payment Method</label
+              >
+              <div
+                class="flex justify-start w-full px-4 py-3 border border-gray-300 rounded-lg cursor-pointer peer-checked:border-orange-500 peer-checked:border-transparent"
+              >
+                <input type="radio" name="payment" class="peer" />
+                <span class="mx-2 text-base font-bold text-black">e-Money</span>
+              </div>
+              <div class="w-full"></div>
 
-  The ‘Cash on Delivery’ option enables you to pay in cash when our delivery courier arrives 
-  at your residence. Just make sure your address is correct so that your order will not be cancelled.
+              <div
+                class="w-full inline-block px-4 py-3 border border-gray-300 rounded-lg cursor-pointer peer-checked:bg-orange-500 peer-checked:border-transparent"
+              >
+                <input type="radio" name="payment" class="peer" />
+                <span class="mx-2 text-base font-bold text-black"
+                  >Cash on Delivery</span
+                >
+              </div>
+            </div>
 
-  Summary
-  XX99 MK II x1
-  $2,999
+            <div class="grid grid-cols-2 gap-3">
+              <div class="flex flex-col">
+                <label for="" class="my-2 font-sans text-sm font-bold"
+                  >e-Money Number</label
+                >
+                <input
+                  type="text"
+                  placeholder="United States"
+                  required
+                  class="p-3 rounded-lg border-[1px] border-gray-300 focus:outline-none focus:border-focus text-sm text-black font-bold w-full"
+                />
+              </div>
 
-  XX59 x2
-  $899
+              <div class="flex flex-col">
+                <label for="" class="my-2 font-sans text-sm font-bold"
+                  >e-Money PIN</label
+                >
+                <input
+                  type="text"
+                  placeholder="United States"
+                  required
+                  class="p-3 rounded-lg border-[1px] border-gray-300 focus:outline-none focus:border-focus text-sm text-black font-bold w-full"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- END OF CHECKOUT CONTAINER  -->
 
-  YX1 x1
-  $599
+        <!-- SUMMARY CONTAINER  -->
+        <div
+          id="summary-container"
+          class="bg-white p-8 rounded-lg mx-4 w-[350px] max-h-[650px]"
+        >
+          <div><h4 class="font-bold text-[25px]">SUMMARY</h4></div>
+          <div class="flex justify-between my-5">
+            <div class="grid grid-cols-2 gap-2 justify-center">
+              <div class="">
+                <img
+                  src="./assets/product-xx99-mark-two-headphones/desktop/image-product.jpg"
+                  alt=""
+                  width="84px"
+                  height="84px"
+                  class="rounded-lg"
+                />
+              </div>
+              <div class="m-auto">
+                <p class="text-base text-black font-bold">NAME</p>
+                <p class="text-base text-[#7c7979] font-bold">PRICES</p>
+              </div>
+            </div>
 
-  Total $5,396
-  Shipping $10
-  VAT $120
+            <div class="text-base text-[#7c7979] font-bold my-auto">
+              <p>X1</p>
+            </div>
+          </div>
 
-  Grand total $5,526
+          <div class="flex justify-between my-5">
+            <div class="grid grid-cols-2 gap-2 justify-center">
+              <div class="">
+                <img
+                  src="./assets/product-xx99-mark-two-headphones/desktop/image-product.jpg"
+                  alt=""
+                  width="84px"
+                  height="84px"
+                  class="rounded-lg"
+                />
+              </div>
+              <div class="m-auto">
+                <p class="text-base text-black font-bold">NAME</p>
+                <p class="text-base text-[#7c7979] font-bold">PRICES</p>
+              </div>
+            </div>
 
-  Continue & pay
+            <div class="text-base text-[#7c7979] font-bold my-auto">
+              <p>X1</p>
+            </div>
+          </div>
 
+          <div class="flex justify-between my-5">
+            <div class="grid grid-cols-2 gap-2 justify-center">
+              <div class="">
+                <img
+                  src="./assets/product-xx99-mark-two-headphones/desktop/image-product.jpg"
+                  alt=""
+                  width="84px"
+                  height="84px"
+                  class="rounded-lg"
+                />
+              </div>
+              <div class="m-auto">
+                <p class="text-base text-black font-bold">NAME</p>
+                <p class="text-base text-[#7c7979] font-bold">PRICES</p>
+              </div>
+            </div>
 
-  <!-- Success Modal -->
-  Thank you for your order
-  You will receive an email confirmation shortly.
+            <div class="text-base text-[#7c7979] font-bold my-auto">
+              <p>X1</p>
+            </div>
+          </div>
 
-  XX99 MK II x 1
-  $2,999
-  and 2 other item(s)
-
-  Grand total
-  $5,526
-
-  Back to home
-  <!-- End success modal -->
-
-
-  Home
-  Headphones
-  Speakers
-  Earphones
-
-  Audiophile is an all in one stop to fulfill your audio needs. We're a small team of music lovers
-  and sound specialists who are devoted to helping you get the most out of personal audio. Come and
-  visit our demo facility - we’re open 7 days a week.
-
-  Copyright 2021. All Rights Reserved
-</body>
-
+          <div class="flex justify-between my-2">
+            <p class="text-base text-[#7c7979] font-semibold">TOTAL</p>
+            <p class="text-base text-black font-bold">PRICES</p>
+          </div>
+          <div class="flex justify-between my-2">
+            <p class="text-base text-[#7c7979] font-semibold">SHIPPING</p>
+            <p class="text-base text-black font-bold">PRICES</p>
+          </div>
+          <div class="flex justify-between my-2">
+            <p class="text-base text-[#7c7979] font-semibold">VAT (INCLUDED)</p>
+            <p class="text-base text-black font-bold">PRICES</p>
+          </div>
+          <div class="flex justify-between my-5">
+            <p class="text-base text-[#7c7979] font-semibold">GRAND TOTAL</p>
+            <p class="text-base text-focus font-bold">PRICES</p>
+          </div>
+          <button
+            class="w-full p-5 bg-focus text-center text-white text-base font-bold"
+          >
+            CONTINUE & PAY
+          </button>
+        </div>
+      </div>
+    </div>
+    <script></script>
+  </body>
 </html>
