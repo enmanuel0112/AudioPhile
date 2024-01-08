@@ -36,10 +36,7 @@
         });
 
       function buildHtml(datObject) {
-        console.log(datObject); // aqui esta funcionando el codigo
-        const correctedImagePath = datObject.image.desktop.replace(/^\./, "");
-        console.log(datObject.image.desktop);
-        console.log(correctedImagePath);
+        console.log(datObject);
         const html = `<div>
           <div class="bg-black w-screen h-[300px] flex justify-center justify-items-center"><h1 class="text-center font-bold text-white text-[45px] m-auto">${datObject.category.toUpperCase()}<h1></div>
           
@@ -58,7 +55,7 @@
               <div id="containerInf" class="m-auto">
                 <div class="p-10">
                     <h3 class="text-orange">NEW PRODUCT</h3>
-                      <div class= ""> 
+                      <div class=""> 
                         <h1 
                           class="text-[50px] font-bold m-0">${datObject.name}
                         </h1>
@@ -94,6 +91,10 @@
         html = html.trim(); // Never return a text node of whitespace as the result
         template.innerHTML = html;
         return template.content.firstChild;
+      }
+
+      export function hello() {
+        return "hello world";
       }
     </script>
   </body>
