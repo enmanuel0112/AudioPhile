@@ -1,11 +1,511 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+  <link href="../dist/output.css" rel="stylesheet" />
+
+  <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&display=swap"
+      rel="stylesheet" />
+  
+  <title>Frontend Mentor | Audiophile e-commerce website</title>
 </head>
 <body>
+  <div class="background-body xl:hidden z-20" id="backgroundBody"></div><!--background-body-->
+
+<header class="w-[100%] m-auto relative "> 
+
+
+  <img src="./assets/home/desktop/image-hero.jpg" alt="" class="object-cover hidden xl:block"><!--hero Desktop-->
+  <img src="./assets/home/tablet/image-header.jpg" alt="" class="object-cover  hidden md:block xl:hidden"><!--Hero Tablet-->
+  <img src="./assets/home/mobile/image-header.jpg" alt="" class="object-cover block  md:hidden xl:hidden"><!--Hero mobil-->
+
+
+  <div class="absolute inset-0 w-[90%] xl:w-[80%] m-auto">
+
+
+
+    <div class="flex justify-between content-center items-center   w-[100%] m-auto ">
+
+
+
+      <div class="flex justify-between items-center py-[2rem] z-30" >
+        <div class="mr-[3rem] xl:mr-[0]" id="menu">
+          <img src="./assets/shared/tablet/icon-hamburger.svg" alt="" class=" xl:hidden w-[25px] cursor-pointer">
+        </div>
+       
+        <h1 class="text-white text-[2rem] font-bold sans"> audiophile</h1>
+
+       
+      </div><!--menu-->
+   
   
-</body>
-</html>
+      <nav class="hidden xl:block">
+    
+        <a href="#" class="text-white m-[1rem] p-[2rem] font-bold hover:text-orange duration-[0.5s] sans">HOME</a>
+        <a href="#" class="text-white m-[1rem] p-[2rem] font-bold hover:text-orange duration-[0.5s] sans">HEADPHONES</a>
+        <a href="#" class="text-white m-[1rem] p-[2rem] font-bold hover:text-orange duration-[0.5s] sans">SPEAKERS</a>
+        <a href="#" class="text-white m-[1rem] p-[2rem] font-bold hover:text-orange duration-[0.5s] sans">EARPHONES</a>
+    
+    
+      </nav>
+    
+      <img src="./assets/shared/desktop/icon-cart.svg" alt="" class="w-[30px] h-[30px] cursor-pointer">
+    
+       
+  
+
+  </div><!--Header Navegation-->
+
+    <hr class=" w-[100%]  m-auto">
+
+    
+  <div class="absolute inset-y-[30%] w-[100%] xl:w-[35%] text-center xl:text-start ">
+
+    <h3 class="text-gray-600 font-thin text-[1rem] -tracking-[-10px] mb-[25px] sans"  > NEW PRODUCT</h3>
+
+    <h2 class="text-[2rem] md:text-[3rem] w-[100%] text-white leading-[40px]  md:leading-[60px] mb-[2rem] uppercase sans font-bold"> XX99 Mark II <br>  Headphones</h2>
+
+    <div class="w-[100%]  xl:w-[75%] mb-[2rem] ">
+      <p class="text-gray-400 text-[1.1rem] sans w-[100%] md:w-[50%] xl:w-[100%] m-auto ">
+        Experience natural, lifelike audio and exceptional build quality made for the passionate music enthusiast.
+      </p>
+  
+    </div>
+   
+
+    <button class="button-1-default hover:button-1-default-hover sans  ">SEE PRODUCT</button>
+
+  </div><!--Hero Container-->
+
+
+</div> <!--hero-->
+
+
+
+
+
+
+<!--Showing Menu-->
+
+<section class="  w-[100%]   absolute inset-y-[18%] md:inset-y-[11%] lg:inset-y-[18%] h-[130vh] md:h-[40vh] lg:h-[30vh]  bg-white xl:hidden  menu z-30" id="showMenu" >
+
+  <div class="mx-auto my-[4rem] md:my-[8rem] w-[100%]  ">
+
+    <div  class="m-auto grid grid-cols-1 md:grid-cols-3 w-[100%] md:w-[95%] ">
+
+   
+        <div class="relative m-auto my-[4rem] md:my-[0] " >
+
+          <img src="./assets/shared/desktop/image-category-thumbnail-headphones.png" alt="" class="w-[200px] md:w-[300px] absolute inset-y-[-40%] inset-x-[0] mx-auto md:inset-x-[0] z-10 ">
+
+
+          <div class="bg-darkWhite w-[350px] md:w-[200px] h-[200px] relative flex rounded-[10px]"  >
+
+            <div class=" w-[100%] absolute inset-y-[50%] text-center m-auto ">
+              <h2 class="m-auto font-bold uppercase sans">headphones</h2>
+
+              <a href="headphones.html" class="text-gray-400 cursor-pointer uppercase">shop </a><span class="span-button-arrow "> > </span>
+            </div>
+
+          </div>
+
+      </div><!--headphones-->
+      
+
+      
+
+      <div class="relative m-auto   my-[4rem] md:my-[0]">
+
+        <img src="./assets/shared/desktop/image-category-thumbnail-speakers.png" alt="" class=" w-[200px] md:w-[300px] absolute inset-y-[-40%] inset-x-[0] mx-auto md:inset-x-[0] z-10 ">
+
+
+        <div class="bg-darkWhite w-[350px] md:w-[200px] h-[200px] relative flex rounded-[10px]"  >
+
+          <div class=" w-[100%] absolute inset-y-[50%] text-center m-auto ">
+            <h2 class="m-auto font-bold uppercase sans">speakers</h2>
+
+            <a href="speakers.html" class="text-gray-400 cursor-pointer  uppercase" >shop </a><span class="span-button-arrow "> > </span>
+          </div>
+
+        </div>
+
+
+
+    </div><!--Speaker-->
+
+
+
+   
+    <div class="relative m-auto   my-[4rem] md:my-[0]">
+
+      <img src="./assets/shared/desktop/image-category-thumbnail-earphones.png" alt="" class=" w-[250px] md:w-[300px] absolute md:inset-y-[-35%] inset-y-[-50%] inset-x-[0] mx-auto md:inset-x-[0] z-10 ">
+
+
+      <div class="bg-darkWhite w-[350px] md:w-[200px] h-[200px] relative flex rounded-[10px]"  >
+
+        <div class=" w-[100%] absolute inset-y-[50%] text-center m-auto ">
+          <h2 class="m-auto font-bold uppercase sans">eardphones</h2>
+
+          <a href="speakers.html" class="text-gray-400 cursor-pointer uppercase">shop </a><span class="span-button-arrow "> > </span>
+        </div>
+
+      </div>
+
+
+
+  </div><!--earphones-->
+
+     
+    </div>
+
+  </div>
+  
+</section><!--Menu Shop-->
+
+
+
+
+</header>
+  
+
+  <div class="show-image"></div>
+
+
+
+ 
+ <main >
+
+
+  <section class=" mt-[10rem] md:mt-[15rem] w-[100%] flex  " >
+
+    <div class="m-auto w-[100%] btn-z-index">
+
+      <div  class="m-auto grid grid-cols-1 md:grid-cols-3 w-[100%] md:w-[95%] 2xl:w-[100%]">
+
+     
+        <div class="relative m-auto  my-[4rem] md:my-[0] ">
+
+          <img src="./assets/shared/desktop/image-category-thumbnail-headphones.png" alt="" class=" w-[250px] md:w-[300px] absolute inset-y-[-55%] inset-x-[9%] md:inset-x-[0] z-10 ">
+
+
+          <div class="bg-darkWhite w-[300px] md:w-[250px] h-[200px] relative flex rounded-[10px]"  >
+
+            <div class=" w-[100%] absolute inset-y-[50%] text-center m-auto ">
+              <h2 class="m-auto font-bold uppercase sans">headphone</h2>
+
+              <a href="headphones.html" class="text-gray-400 uppercase ">shop </a><span class="span-button-arrow "> > </span>
+            </div>
+
+          </div>
+
+
+        </div><!--headphones-->
+        
+
+
+
+        <div class="relative m-auto  my-[4rem] md:my-[0]  ">
+
+          <img src="./assets/shared/desktop/image-category-thumbnail-speakers.png" alt="" class=" w-[250px] md:w-[300px] absolute inset-y-[-55%] inset-x-[9%] md:inset-x-[0] z-10 ">
+
+
+          <div class="bg-darkWhite w-[300px] md:w-[250px] h-[200px] relative flex rounded-[10px]"  >
+
+            <div class=" w-[100%] absolute inset-y-[50%] text-center m-auto ">
+              <h2 class="m-auto font-bold uppercase sans">speakers</h2>
+
+              <a href="speakers.html" class="text-gray-400 uppercase">shop </a><span class="span-button-arrow "> > </span>
+            </div>
+
+          </div>
+
+
+
+      </div><!--Speaker-->
+
+
+
+      <div class="relative m-auto   my-[5rem] md:my-[0] ">
+
+        <img src="./assets/shared/desktop/image-category-thumbnail-earphones.png" alt="" class="w-[300px] absolute inset-[-60%] sm:inset-y-[-50%]  inset-x-[0%] md:inset-x-[0] z-10 ">
+
+
+        <div class="bg-darkWhite w-[300px] md:w-[250px] h-[200px] relative flex rounded-[10px]"  >
+
+          <div class=" w-[100%] absolute inset-y-[50%] text-center m-auto ">
+            <h2 class="m-auto font-bold uppercase sans">earphones</h2>
+
+            <a href="earphones.html" class="text-gray-400 uppercase">shop </a><span class="span-button-arrow "> > </span>
+          </div>
+
+        </div>
+
+
+
+    </div><!--earphones-->
+
+       
+      </div>
+
+    </div>
+    
+  </section>
+
+
+
+ 
+
+
+
+<section class=" mt-[3rem] md:mt-[10rem] ">
+
+ 
+  <article class="w-[100%] h-[auto] md:h-[60vh] flex mb-[0] md:mb-[8rem] lg:mb-[0] " >
+
+    <div class="bg-orange rounded-[10px] w-[80%] md:w-[90%] lg:w-[80%] h-[80vh] md:h-[70vh] lg:h-[60vh] m-auto relative flex">
+      <img src="./assets/home/desktop/pattern-circles.svg" alt="" class="absolute xl:inset-x-[10%]  2xl:inset-x-[-10%]  ">
+
+
+      <div class=" w-[100%]   h-[60vh] ">
+        
+          <div class="grid grid-cols-1 xl:grid-cols-2 gap-[2rem] m-auto">
+
+                
+        <div class="relative w-[100%] ">
+
+          <div class="h-[60vh] w-[100%] absolute xl:inset-y-[37.5%]  2xl:inset-y-[20.4%] 2xl:inset-x-[1.5%] flex">
+            <div class="mx-[auto] mt-[3rem] xl:mt-[0] w-[100%]">
+
+              <img src="./assets/home/desktop/image-speaker-zx9.png" alt="" class=" w-[70%] md:w-[50%] xl:w-[80%] m-auto ">
+
+            </div>
+           
+          </div>
+
+        </div>
+      
+  
+        <div class="relative w-[100%] h-[60vh] flex">
+
+            <div class="w-[90%] md:w-[50%] m-auto ">
+
+
+                <div class=" absolute inset-y-[50%] xl:inset-y-[30%] text-center xl:text-start w-[90%] md:w-[50%]">
+    
+                  <h2 class="text-white text-[3rem] uppercase font-bold leading-[50px]  ">zx9 <br> speaker</h2>
+          
+                  <p class="my-[2rem] text-gray-300"> Upgrade to premium speakers that are phenomenally built to deliver truly remarkable sound.</p>
+      
+      
+                  <a href="speakers.html" class="button-black-default uppercase text-[12px]" >see product</a>
+          
+                </div>
+
+            </div>
+
+    
+
+        </div><!--speaker title-->
+
+
+
+        
+          </div><!--speaker grid-->
+
+  
+  
+      </div>
+  
+  
+  
+    </div><!--speaker zx9 contianer-->
+    
+  
+  
+  
+  </article>
+
+
+
+<article class="w-[100%] flex my-[3rem] ">
+
+  <div class="w-[80%] h-auto md:w-[90%] lg:w-[80%] m-auto relative  ">
+    
+    <img src="./assets/home/desktop/image-speaker-zx7.jpg" alt="" class="w-[100%]  h-[40vh] md:h-auto md:w-[100%] object-cover rounded-[10px]">
+
+   
+
+    <div class="absolute inset-y-[15%] md:inset-y-[20%] lg:inset-y-[30%] inset-x-[10%]">
+      <h2 class=" text-[1.5rem] md:text-[2rem] font-sans mb-[2rem] font-bold uppercase">ZX7 speaker</h2>
+
+      <a href="speakers.html" class=' button-product '>SEE PRODUCT</a>
+    </div>
+
+  </div>
+
+</article><!--ZX7 SPEAKER-->
+
+
+
+
+
+
+
+
+<article class="w-[100%] flex">
+
+  <div class="grid grid-cols-1 md:grid-cols-2 w-[80%] m-auto">
+
+
+    <div >
+
+      <img src="./assets/home/desktop/image-earphones-yx1.jpg" alt="" class="rounded-[10px] " >
+     
+    </div>
+
+
+    <div class="bg-darkWhite flex flex-col rounded-[10px] mt-[1rem] md:mt-[0] h-[20vh] md:h-[auto]">
+
+
+      <div  class="m-[1rem] md:m-auto" >
+        <h2 class="font-sans text-[1.5rem] md:text-[2rem] font-bold uppercase mb-[2rem] "> YX1 earphones</h2>
+        <a href="./earphones.html" target="_blank" class="button-product">SEE PRODUCT</a>
+      </div>
+
+    </div>
+
+
+  </div>
+
+
+</article><!--YX1 EARPHONES-->
+
+
+
+
+</section>
+
+
+
+<section class="w-[100%] flex my-[5rem] xl:my-[10rem] ">
+
+    <div class="grid grid-cols-1  rounded-[20px] xl:grid-cols-2 w-[80%] xl:w-[80%] m-auto gap-[0] xl:gap-[5rem]  ">
+
+      <img src="./assets/shared/tablet/image-best-gear.jpg" alt="" class="mb-[2rem] hidden md:block xl:hidden rounded-[10px]"><!--image tablet-->
+
+      <img src="./assets/shared/mobile/image-best-gear.jpg" alt="" class="mb-[2rem] block md:hidden rounded-[10px]"><!--image mobil-->
+
+
+      <div class="w-[100%]  my-[auto] m-auto  xl:my-[auto] xl:mx-[0] ">
+
+        <div class=" w-[100%]  ">
+
+          <h2 class="uppercase font-bold sans pb-[1rem] text-center md:text-[2rem] md:leading-[40px]  md:text-center xl:text-start">Bringing you the <br class="block md:hidden">  <span class="text-orange">best</span> <br class="hidden md:block">  audio gear</h2>
+    
+          <p class="text-gray-400 text-center md:text-center xl:text-start w-[100%] xl:w-[auto] m-auto ">
+            Located at the heart of New York City, Audiophile is the premier store for high end headphones, 
+            earphones, speakers, and audio accessories. We have a large showroom and luxury demonstration 
+            rooms available for you to browse and experience a wide range of our products. Stop by our store 
+            to meet some of the fantastic people who make Audiophile the best place to buy your portable 
+            audio equipment.
+          </p>
+
+
+        </div>
+        
+      
+    </div>
+
+
+
+
+      <img src="./assets/shared/desktop/image-best-gear.jpg" alt="" class="w-[100%] hidden xl:block "><!--image desktop-->
+
+ 
+    </div>
+
+</section>
+
+
+
+ </main>
+
+
+
+
+ <footer class="bg-black flex">
+
+  <div class="w-[90%]  m-auto flex flex-col text-center md:text-start py-[2rem]">
+
+
+
+    <div class="flex xl:justify-between flex-col xl:flex-row lg:items-start items-center    w-[100%] m-auto ">
+  
+      <h2 class="text-white text-[1.5rem] font-bold sans"> audiophile</h2>
+  
+      <nav class="mt-[1rem] xl:m-[0] flex flex-col md:flex-row ">
+    
+        <a href="#" class="text-white text-[15px] m-[0] xl:m-[1rem] mt-[1rem]   pr-[1rem] xl:p-[2rem] font-bold hover:text-orange duration-[0.5s] sans">HOME</a>
+        <a href="#" class="text-white text-[15px]m-[0] xl:m-[1rem] mt-[1rem]   pr-[1rem] xl:p-[2rem] font-bold hover:text-orange duration-[0.5s] sans">HEADPHONES</a>
+        <a href="#" class="text-white text-[15px] m-[0] xl:m-[1rem] mt-[1rem]  pr-[1rem] xl:p-[2rem] font-bold hover:text-orange duration-[0.5s] sans">SPEAKERS</a>
+        <a href="#" class="text-white text-[15px] m-[0] xl:m-[1rem] mt-[1rem]  pr-[1rem] xl:p-[2rem] font-bold hover:text-orange duration-[0.5s] sans">EARPHONES</a>
+    
+    
+      </nav>
+      </div><!--footer Nav-->
+
+
+
+  
+      <div>
+        <p class="text-gray-400  W-[100%] xl:w-[35%]  my-[5rem] " >
+
+          Audiophile is an all in one stop to fulfill your audio needs. We're a small team of music lovers 
+          and sound specialists who are devoted to helping you get the most out of personal audio. Come and 
+          visit our demo facility - we're open 7 days a week.
+        </p>
+
+
+     </div>
+  
+
+          <div class="flex flex-col md:flex-row md:justify-between  
+           md:mr-[2.5rem]">
+
+        
+          <p class="text-gray-400 ">
+            Copyright 2021. All Rights Reserved
+          </p>
+
+          <div class="flex  m-auto md:m-0 mt-[2rem]">
+            <div  class="mx-[1rem]">
+              <img src="./assets/shared/desktop/icon-facebook.svg" alt="">
+            </div><!--Icon Facebook-->
+            
+            <div class="mx-[1rem]">
+              <img src="./assets/shared/desktop/icon-twitter.svg" alt="">
+            </div><!--Icon Twitter-->
+    
+            <div class="mx-[1rem]">
+              <img src="./assets/shared/desktop/icon-instagram.svg" alt="">
+            </div><!--Icon Instagram-->
+    
+    
+          </div><!--Icons-->
+
+
+          </div>
+       
+    
+      </div><!--Footer Container-->
+
+
+      <script src="./js/app.js"></script>
+      </body>
+
+      </html>

@@ -1,60 +1,60 @@
 // Menu Home
 
 
-// const showMenu = document.getElementById('menu');
+const showMenu = document.getElementById('menu');
 
 
-// showMenu.addEventListener('click', () =>  {
+showMenu.addEventListener('click', () =>  {
 
-//     const showMenu = document.getElementById('showMenu');
-//     const backgroundBody = document.getElementById('backgroundBody');
-//     const shopZIndex = document.querySelector('.btn-z-index');
+    const showMenu = document.getElementById('showMenu');
+    const backgroundBody = document.getElementById('backgroundBody');
+    const shopZIndex = document.querySelector('.btn-z-index');
 
-//     showMenu.classList.toggle('menu-active');
-//     backgroundBody.classList.toggle('background-body-active');
+    showMenu.classList.toggle('menu-active');
+    backgroundBody.classList.toggle('background-body-active');
 
-//     setTimeout( () =>{
+    setTimeout( () =>{
 
-//         shopZIndex.classList.toggle('btn-z-index-active');
-//     }, 1)
-
-
-
-
-// })
-
-
-// // XX59 Mark One 
+        shopZIndex.classList.toggle('btn-z-index-active');
+    }, 1)
 
 
 
-// async function  dataJson (dato) {
-//     const response = await fetch('/starter-code/src/js/data.json');
-//     const datos = await response.json();
+
+})
+
+
+// XX59 Mark One 
 
 
 
-//     function xx59MarkOneFunction () {
-
-//         const xx59MarkOne = document.querySelector('.button-1-default');
-
-//         xx59MarkOne.addEventListener('click', () =>{
-
-//             console.log('este si funciona', datos)
-
-//             console.log(datos);
-
-//         } )
-
-//     }
-
-//     xx59MarkOneFunction();
+async function  dataJson (dato) {
+    const response = await fetch('/starter-code/src/js/data.json');
+    const datos = await response.json();
 
 
 
-// }
+    function xx59MarkOneFunction () {
+
+        const xx59MarkOne = document.querySelector('.button-1-default');
+
+        xx59MarkOne.addEventListener('click', () =>{
+
+            console.log('este si funciona', datos)
+
+            console.log(datos);
+
+        } )
+
+    }
+
+    xx59MarkOneFunction();
+
+
+
+}
  
 
 
 
-// dataJson();
+dataJson();
