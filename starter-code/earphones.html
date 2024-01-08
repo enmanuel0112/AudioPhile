@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="../dist/output.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Audiophile e-commerce website</title>
+  </head>
+
+  <body>
+    <div id="container"></div>
+    <script>
+      fetch("../src/js/data.json")
+        .then((response) => response.json())
+        .then((data) => {
+          const firstEarphones = data[0];
+          const htmlElement = buildHtml(firstEarphones);
+          document.getElementById("container").appendChild(htmlElement);
+        })
+        .catch((error) => {
+          console.error("something wrong", error);
+        });
+
+      function buildHtml(datObject) {
+        console.log(datObject); // aqui esta funcionando el codigo
+        const correctedImagePath = datObject.image.desktop.replace(/^\./, "");
+        console.log(datObject.image.desktop);
+        console.log(correctedImagePath);
+        const html = `<div>
+          <div class="bg-black w-screen h-[300px] flex justify-center justify-items-center"><h1 class="text-center font-bold text-white text-[45px] m-auto">${datObject.category.toUpperCase()}<h1></div>
+          
+          <div>
+            <div class= "w-screen h-screen grid grid-cols-2 justify-center">
+              <div id="containerImage" class="m-auto">
+                <img
+                  src="${datObject.image.desktop}"
+                  alt=""
+                  width="400px"
+                  height="400px"
+                  class="rounded-lg"
+                />
+
+                <img
+                  src="/assets/product-yx1-earphones/desktop/image-product.jpg"
+                  alt=""
+                  width="400px"
+                  height="400px"
+                  class="rounded-lg"
+                />
+              </div>
+
+              <div id="containerInf" class="m-auto">
+                <div class="p-10">
+                    <h3>NEW PRODUCT</h3>
+                      <div class= ""> 
+                        <h1 
+                          class="text-[50px] font-bold m-0">${datObject.name}
+                        </h1>
+                      </div>
+                      <p class="text-[15px] font-semibold">${
+                        datObject.description
+                      }</p>
+                    <button class="button-1-default">SEE PRODUCT</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="grid grid-cols-3 justify-start">
+
+            
+                <div id="constainerHead" class="m-auto rounded-lg bg-red-300">
+               
+                </div>
+            
+
+
+
+          </div>
+
+          <div>`;
+        return htmlToElement(html);
+      }
+
+      function htmlToElement(html) {
+        var template = document.createElement("template");
+        html = html.trim(); // Never return a text node of whitespace as the result
+        template.innerHTML = html;
+        return template.content.firstChild;
+      }
+    </script>
+  </body>
+</html>
