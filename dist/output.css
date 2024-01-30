@@ -609,6 +609,11 @@ video {
   right: 10%;
 }
 
+.inset-x-\[18\%\] {
+  left: 18%;
+  right: 18%;
+}
+
 .inset-x-\[9\%\] {
   left: 9%;
   right: 9%;
@@ -649,6 +654,15 @@ video {
   bottom: 50%;
 }
 
+.inset-y-\[60\%\] {
+  top: 60%;
+  bottom: 60%;
+}
+
+.top-\[-80px\] {
+  top: -80px;
+}
+
 .z-10 {
   z-index: 10;
 }
@@ -659,6 +673,14 @@ video {
 
 .z-30 {
   z-index: 30;
+}
+
+.z-0 {
+  z-index: 0;
+}
+
+.z-50 {
+  z-index: 50;
 }
 
 .m-0 {
@@ -705,6 +727,16 @@ video {
 .my-2 {
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
+}
+
+.my-20 {
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+}
+
+.my-40 {
+  margin-top: 10rem;
+  margin-bottom: 10rem;
 }
 
 .my-5 {
@@ -842,7 +874,23 @@ video {
   height: auto;
 }
 
-.h-screen {
+.h-full {
+  height: 100%;
+}
+
+.h-10 {
+  height: 2.5rem;
+}
+
+.h-32 {
+  height: 8rem;
+}
+
+.h-\[100\%\] {
+  height: 100%;
+}
+
+.h-\[100vh\] {
   height: 100vh;
 }
 
@@ -856,6 +904,10 @@ video {
 
 .w-\[200px\] {
   width: 200px;
+}
+
+.w-\[230px\] {
+  width: 230px;
 }
 
 .w-\[250px\] {
@@ -902,6 +954,10 @@ video {
   width: 100vw;
 }
 
+.max-w-\[1200px\] {
+  max-width: 1200px;
+}
+
 .cursor-pointer {
   cursor: pointer;
 }
@@ -942,12 +998,24 @@ video {
   justify-content: space-between;
 }
 
+.justify-around {
+  justify-content: space-around;
+}
+
 .justify-items-center {
   justify-items: center;
 }
 
+.gap-10 {
+  gap: 2.5rem;
+}
+
 .gap-2 {
   gap: 0.5rem;
+}
+
+.gap-20 {
+  gap: 5rem;
 }
 
 .gap-3 {
@@ -1007,19 +1075,28 @@ video {
   background-color: rgb(216 125 74 / var(--tw-bg-opacity));
 }
 
-.bg-red-300 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(252 165 165 / var(--tw-bg-opacity));
-}
-
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
+.bg-slate-900 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(15 23 42 / var(--tw-bg-opacity));
+}
+
+.bg-\[\#141414\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(20 20 20 / var(--tw-bg-opacity));
+}
+
 .object-cover {
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+.p-0 {
+  padding: 0px;
 }
 
 .p-10 {
@@ -1192,6 +1269,10 @@ video {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.filter {
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
 .duration-\[0\.5s\] {

@@ -22,80 +22,285 @@
   </head>
 
   <body>
-    <div id="container"></div>
+    
+          <!--earphoneProducts -->
+
+  <div id="container"></div>
+
+    
     <script>
+      let global = null
       fetch("./js/data.json")
         .then((response) => response.json())
         .then((data) => {
+          //console.log(data);
+          global = data;
           const firstEarphones = data[0];
-          const htmlElement = buildHtml(firstEarphones);
+          const speakersZx7 = data[4]
+          const speakersZx9 = data[5];
+          const htmlElement = buildHtmlSpeakers(speakersZx7, speakersZx9);
           document.getElementById("container").appendChild(htmlElement);
         })
+
+
         .catch((error) => {
           console.error("something wrong", error);
         });
+      
+
+  function fetchData(id, callback) {
+    fetch("./js/data.json")
+    .then((response) => response.json())
+    .then((data) => {
+      const item  = data.find((item) => item.id === id)
+      callback(item);
+    })
+    .catch((error) => {
+      console.error("something wrong", error);
+    });
+  }
+
+
+        fetchData(id, (data) => {
+          //console.log(data);
+    });
+
+   fetchData(1)
+
+        setTimeout(() => {
+          //console.log(global);
+      }, 1000);
+
+      
+        function findObject (id) {
+          const detectiveId = ''
+        }
 
       function buildHtml(datObject) {
         console.log(datObject);
         const html = `<div>
           <div class="bg-black w-screen h-[300px] flex justify-center justify-items-center"><h1 class="text-center font-bold text-white text-[45px] m-auto">${datObject.category.toUpperCase()}<h1></div>
-          
-          <div>
-            <div class= "w-screen h-screen grid grid-cols-2 justify-center">
-              <div id="containerImage" class="m-auto">
-                <img
-                  src="${datObject.image.desktop}"
-                  alt=""
-                  width="400px"
-                  height="400px"
-                  class="rounded-lg"
-                />
-              </div>
+          <div class="max-w-[1200px] m-auto">
 
-              <div id="containerInf" class="m-auto">
-                <div class="p-10">
-                    <h3 class="text-orange">NEW PRODUCT</h3>
-                      <div class=""> 
-                        <h1 
-                          class="text-[50px] font-bold m-0">${datObject.name}
-                        </h1>
+          <div class= "flex justify-center mx-auto my-40 w-full">
+                  <div class= "grid grid-cols-2 justify-center gap-20">
+                      <div id="containerImage" class="m-auto">
+                          <img
+                            src="${datObject.image.desktop}"
+                            alt=""
+                            class="rounded-lg w-full h-full"
+                          />
                       </div>
-                      <p class="text-[15px] font-semibold">${
-                        datObject.description
-                      }</p>
-                    <button class="button-1-default my-2">SEE PRODUCT</button>
-                </div>
-              </div>
-            </div>
+
+                      <div id="containerInf" class="m-auto p-10">
+                              <h3 class="text-orange">NEW PRODUCT</h3>
+                                <div class=""> <h1 class="text-[50px] font-bold m-0">${datObject.name}</h1></div>
+                              <p class="text-[15px] font-semibold">${
+                                datObject.description
+                              }</p>
+                            <button class="button-1-default my-2">SEE PRODUCT</button>
+                      </div>
+                  </div>
           </div>
 
 
-          <div class="grid grid-cols-3 justify-start">
-
-            
-                <div id="constainerHead" class="m-auto rounded-lg bg-red-300">
-               
+          <div class="grid grid-cols-3 justify-around w-full gap-10 my-20">
+            <div class="m-auto my-[4rem] md:my-[0] w-full flex justify-center ">
+                    <div class="relative bg-darkWhite w-full h-[200px] relative flex rounded-[10px]">
+                      <img  src="./assets/shared/desktop/image-category-thumbnail-headphones.png" 
+                          alt=""
+                          class=" w-[230px] absolute inset-x-[18%] top-[-80px] z-10 ">
+                      <div class=" w-[100%] absolute inset-y-[60%] text-center m-auto ">
+                        <h2 class="m-auto font-bold uppercase sans">eardphones</h2>
+                        <a href="speakers.html" class="text-gray-500 font-bold cursor-pointer uppercase">shop</a><span class="span-button-arrow "> > </span>
+                      </div>
+                    </div>
                 </div>
-            
 
+                <div class="m-auto my-[4rem] md:my-[0] w-full flex justify-center ">
+                    <div class="relative bg-darkWhite w-full h-[200px] relative flex rounded-[10px]">
+                      <img  src="./assets/shared/desktop/image-category-thumbnail-speakers.png" 
+                          alt=""
+                          class=" w-[230px] absolute inset-x-[18%] top-[-80px] z-10 ">
+                      <div class=" w-[100%] absolute inset-y-[60%] text-center m-auto ">
+                        <h2 class="m-auto font-bold uppercase sans">eardphones</h2>
+                        <a href="speakers.html" class="text-gray-500 font-bold cursor-pointer uppercase">shop</a><span class="span-button-arrow "> > </span>
+                      </div>
+                    </div>
+                </div>
 
-
+                <div class="m-auto my-[4rem] md:my-[0] w-full flex justify-center ">
+                    <div class="relative bg-darkWhite w-full h-[200px] relative flex rounded-[10px]">
+                      <img  src="./assets/shared/desktop/image-category-thumbnail-earphones.png" 
+                          alt=""
+                          class=" w-[230px] absolute inset-x-[18%] top-[-80px] z-10 ">
+                      <div class=" w-[100%] absolute inset-y-[60%] text-center m-auto ">
+                        <h2 class="m-auto font-bold uppercase sans">eardphones</h2>
+                        <a href="speakers.html" class="text-gray-500 font-bold cursor-pointer uppercase">shop</a><span class="span-button-arrow "> > </span>
+                      </div>
+                    </div>
+                </div>
           </div>
 
+
+
+          <div>
+            <div class= "flex justify-center mx-auto my-40 w-full">
+                  <div class= "grid grid-cols-2 justify-center gap-20">
+                      
+                      <div id="containerInf" class="m-auto p-10">
+                                <div class=""> <h1 class="text-[50px] font-bold m-0 uppercase m-0 p-0">bringinyou the <span class="text-orange">best</span> audio gear</h1></div>
+                              <p class="text-[15px] font-semibold">Located at the heart of New York City, Audiophile is the premier store for high end headphones, earphones, speakers, and audio accessories. We have a large showroom and luxury demonstration rooms available for you to browse and experience a wide range of our products. Stop by our store to meet some of the fantastic people who make Audiophile the best place to buy your portable audio equipment..
+                              }</p>
+                      </div>
+
+                      <div id="containerImage" class="m-auto">
+                          <img
+                            src="./assets/shared/desktop/image-best-gear.jpg"
+                            alt=""
+                            class="rounded-lg w-full h-full"
+                          />
+                      </div>
+                  </div>
+          </div>
+          
+          
+          </div>
+
+          </div>
           <div>`;
-        return htmlToElement(html);
+            const element = htmlToElement(html);
+        return element;
       }
 
+
+      function buildHtmlSpeakers(objectOne, objectTwo) {
+        console.log(objectTwo)
+        const html = `<div>
+          <div class="bg-black w-screen h-[300px] flex justify-center justify-items-center"><h1 class="text-center font-bold text-white text-[45px] m-auto">${objectOne.category.toUpperCase()}<h1></div>
+          <div class="max-w-[1200px] m-auto">
+
+            
+
+
+          <div class= "flex justify-center mx-auto my-40 w-full">
+                  <div class= "grid  grid-cols-1 justify-center gap-20">
+                      <div id="containerImage" class="m-auto">
+                          <img
+                            src="${objectTwo.image.desktop}"
+                            alt=""
+                            class="rounded-lg w-full h-full"
+                          />
+                      </div>
+
+                      <div id="containerInf" class="m-auto p-10">
+                              <h3 class="text-orange">NEW PRODUCT</h3>
+                                <div class=""> <h1 class="text-[50px] font-bold m-0">${objectTwo.name}</h1></div>
+                              <p class="text-[15px] font-semibold">${
+                                objectTwo.description
+                              }</p>
+                            <button class="button-1-default my-2">SEE PRODUCT</button>
+                      </div>
+                  </div>
+          </div>
+
+          <div class= "flex justify-center mx-auto my-40 w-full">
+                  <div class= "grid grid-cols-2 justify-center gap-20">
+                      
+
+                      <div id="containerInf" class="m-auto p-10">
+                                <div class=""> <h1 class="text-[50px] font-bold m-0">${objectOne.name}</h1></div>
+                              <p class="text-[15px] font-semibold">${
+                                objectOne.description
+                              }</p>
+                            <button class="button-1-default my-2">SEE PRODUCT</button>
+                      </div>
+
+                      <div id="containerImage" class="m-auto">
+                          <img
+                            src="${objectOne.image.desktop}"
+                            alt=""
+                            class="rounded-lg w-full h-full"
+                          />
+                      </div>
+                  </div>
+          </div>
+
+
+          <div class="grid grid-cols-3 justify-around w-full gap-10 my-20">
+            <div class="m-auto my-[4rem] md:my-[0] w-full flex justify-center ">
+                    <div class="relative bg-darkWhite w-full h-[200px] relative flex rounded-[10px]">
+                      <img  src="./assets/shared/desktop/image-category-thumbnail-headphones.png" 
+                          alt=""
+                          class=" w-[230px] absolute inset-x-[18%] top-[-80px] z-10 ">
+                      <div class=" w-[100%] absolute inset-y-[60%] text-center m-auto ">
+                        <h2 class="m-auto font-bold uppercase sans">eardphones</h2>
+                        <a href="speakers.html" class="text-gray-500 font-bold cursor-pointer uppercase">shop</a><span class="span-button-arrow "> > </span>
+                      </div>
+                    </div>
+                </div>
+
+                <div class="m-auto my-[4rem] md:my-[0] w-full flex justify-center ">
+                    <div class="relative bg-darkWhite w-full h-[200px] relative flex rounded-[10px]">
+                      <img  src="./assets/shared/desktop/image-category-thumbnail-speakers.png" 
+                          alt=""
+                          class=" w-[230px] absolute inset-x-[18%] top-[-80px] z-10 ">
+                      <div class=" w-[100%] absolute inset-y-[60%] text-center m-auto ">
+                        <h2 class="m-auto font-bold uppercase sans">eardphones</h2>
+                        <a href="speakers.html" class="text-gray-500 font-bold cursor-pointer uppercase">shop</a><span class="span-button-arrow "> > </span>
+                      </div>
+                    </div>
+                </div>
+
+                <div class="m-auto my-[4rem] md:my-[0] w-full flex justify-center ">
+                    <div class="relative bg-darkWhite w-full h-[200px] relative flex rounded-[10px]">
+                      <img  src="./assets/shared/desktop/image-category-thumbnail-earphones.png" 
+                          alt=""
+                          class=" w-[230px] absolute inset-x-[18%] top-[-80px] z-10 ">
+                      <div class=" w-[100%] absolute inset-y-[60%] text-center m-auto ">
+                        <h2 class="m-auto font-bold uppercase sans">eardphones</h2>
+                        <a href="speakers.html" class="text-gray-500 font-bold cursor-pointer uppercase">shop</a><span class="span-button-arrow "> > </span>
+                      </div>
+                    </div>
+                </div>
+          </div>
+
+
+
+          <div>
+            <div class= "flex justify-center mx-auto my-40 w-full">
+                  <div class= "grid grid-cols-2 justify-center gap-20">
+                      
+                      <div id="containerInf" class="m-auto p-10">
+                                <div class=""> <h1 class="text-[50px] font-bold m-0 uppercase m-0 p-0">bringinyou the <span class="text-orange">best</span> audio gear</h1></div>
+                              <p class="text-[15px] font-semibold">Located at the heart of New York City, Audiophile is the premier store for high end headphones, earphones, speakers, and audio accessories. We have a large showroom and luxury demonstration rooms available for you to browse and experience a wide range of our products. Stop by our store to meet some of the fantastic people who make Audiophile the best place to buy your portable audio equipment..
+                              }</p>
+                      </div>
+
+                      <div id="containerImage" class="m-auto">
+                          <img
+                            src="./assets/shared/desktop/image-best-gear.jpg"
+                            alt=""
+                            class="rounded-lg w-full h-full"
+                          />
+                      </div>
+                  </div>
+          </div>
+          
+          
+          </div>
+
+          </div>
+          <div>`;
+            const element = htmlToElement(html);
+        return element;
+      }
       function htmlToElement(html) {
         var template = document.createElement("template");
         html = html.trim(); // Never return a text node of whitespace as the result
         template.innerHTML = html;
         return template.content.firstChild;
-      }
-
-      export function hello() {
-        return "hello world";
-      }
+      } 
     </script>
   </body>
 </html>
