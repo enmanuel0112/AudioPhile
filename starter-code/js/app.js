@@ -163,107 +163,39 @@ function setupButtonEventHandlers(products) {
 }
 
 function buildHtmlEarphones(products) {
-      const html = `<div>
-        <div class="bg-black w-screen h-[400px] flex justify-center justify-items-center"><h1 class="text-center font-bold text-white text-[45px] m-auto">${products.category.toUpperCase()}<h1></div>
-        <div class="max-w-[1200px] m-auto">
-          
-        <div class= "flex justify-center mx-auto my-40 w-full">
-                <div class= "grid grid-cols-2 justify-center gap-20">
-                    
-  
-                    <div id="containerInf" class="m-auto p-10">
-                              <div class=""> <h1 class="text-[50px] font-bold m-0">${products.name}</h1></div>
-                            <p class="text-[15px] font-semibold">${
-                              products.description
-                            }</p>
-                          <button class="button-1-default my-2" id="${products.id}">SEE PRODUCT</button>
-                    </div>
-  
-                    <div id="containerImage" class="m-auto">
-                        <img
-                          src="${products.image.desktop}"
-                          alt=""
-                          class="rounded-lg w-full h-full"
-                        />
-                    </div>
-                </div>
-        </div>
-  
-  
-        <div class="grid grid-cols-3 justify-around w-full gap-10 my-20">
-          <div class="m-auto my-[4rem] md:my-[0] w-full flex justify-center ">
-                  <div class=" bg-darkWhite w-full h-[200px] relative flex rounded-[10px]">
-                    <img  src="./assets/shared/desktop/image-category-thumbnail-headphones.png" 
-                        alt=""
-                        class=" w-[230px] absolute inset-x-[18%] top-[-80px] z-10 ">
-                    <div class=" w-[100%] absolute inset-y-[60%] text-center m-auto ">
-                      <h2 class="m-auto font-bold uppercase sans">eardphones</h2>
-                      <a href="speakers.html" class="text-gray-500 font-bold cursor-pointer uppercase">shop</a><span class="span-button-arrow "> > </span>
-                    </div>
-                  </div>
-              </div>
-  
-              <div class="m-auto my-[4rem] md:my-[0] w-full flex justify-center ">
-                  <div class=" bg-darkWhite w-full h-[200px] relative flex rounded-[10px]">
-                    <img  src="./assets/shared/desktop/image-category-thumbnail-speakers.png" 
-                        alt=""
-                        class=" w-[230px] absolute inset-x-[18%] top-[-80px] z-10 ">
-                    <div class=" w-[100%] absolute inset-y-[60%] text-center m-auto ">
-                      <h2 class="m-auto font-bold uppercase sans">eardphones</h2>
-                      <a href="speakers.html" class="text-gray-500 font-bold cursor-pointer uppercase">shop</a><span class="span-button-arrow "> > </span>
-                    </div>
-                  </div>
-              </div>
-  
-              <div class="m-auto my-[4rem] md:my-[0] w-full flex justify-center ">
-                  <div class=" bg-darkWhite w-full h-[200px] relative flex rounded-[10px]">
-                    <img  src="./assets/shared/desktop/image-category-thumbnail-earphones.png" 
-                        alt=""
-                        class=" w-[230px] absolute inset-x-[18%] top-[-80px] z-10 ">
-                    <div class=" w-[100%] absolute inset-y-[60%] text-center m-auto ">
-                      <h2 class="m-auto font-bold uppercase sans">eardphones</h2>
-                      <a href="speakers.html" class="text-gray-500 font-bold cursor-pointer uppercase">shop</a><span class="span-button-arrow "> > </span>
-                    </div>
-                  </div>
-              </div>
-        </div>
-  
-  
-  
-        <div>
-          <div class= "flex justify-center mx-auto my-40 w-full">
-                <div class= "grid grid-cols-2 justify-center gap-20">
-                    
-                    <div id="containerInf" class="m-auto p-10">
-                              <div class=""> <h1 class="text-[50px] font-bold m-0 uppercase  p-0">bringinyou the <span class="text-orange">best</span> audio gear</h1></div>
-                            <p class="text-[15px] font-semibold">Located at the heart of New York City, Audiophile is the premier store for high end headphones, earphones, speakers, and audio accessories. We have a large showroom and luxury demonstration rooms available for you to browse and experience a wide range of our products. Stop by our store to meet some of the fantastic people who make Audiophile the best place to buy your portable audio equipment..
-                            }</p>
-                    </div>
-  
-                    <div id="containerImage" class="m-auto">
-                        <img
-                          src="./assets/shared/desktop/image-best-gear.jpg"
-                          alt=""
-                          class="rounded-lg w-full h-full"
-                        />
-                    </div>
-                </div>
-        </div>
-        
-        
-        </div>
-  
-        </div>
-        <div>`;
-          const element = htmlToElement(html);
-          let items = [products]
-          setupButtonEventHandlers(items);
-      return element;
-    }
+  const html = `<div>
+                      <div class="bg-black w-screen h-[400px] flex justify-center justify-items-center"><h1 class="text-center font-bold text-white text-[45px] m-auto">${products.category.toUpperCase()}<h1></div>
+                          
+                      <div class="max-w-[1200px] m-auto">
+                              <div class= "flex justify-center mx-auto my-40 w-full">
+                                      <div class= "grid grid-cols-2 justify-center gap-20">
+                                          <div id="containerInf" class="m-auto p-10">
+                                                    <div class=""> <h1 class="text-[50px] font-bold m-0">${products.name}</h1></div>
+                                                  <p class="text-[15px] font-semibold">${
+                                                    products.description
+                                                  }</p>
+                                                <button class="button-1-default my-2" id="${products.id}">SEE PRODUCT</button>
+                                          </div>
+                        
+                                          <div id="containerImage" class="m-auto">
+                                              <img
+                                                src="${products.image.desktop}"
+                                                alt=""
+                                                class="rounded-lg w-full h-full"
+                                              />
+                                          </div>
+                                      </div>
+                              </div>
+                      </div>
+                  <div>`;
+      const element = htmlToElement(html);
+      let items = [products]
+      setupButtonEventHandlers(items);
+  return element;
+}
 
 
 function buildHtmlSpeakers(products, productsTwo) {
-
     const html = `<div>
       <div class="bg-black w-screen h-[400px] flex justify-center justify-items-center"><h1 class="text-center font-bold text-white text-[45px] m-auto">${products.category.toUpperCase()}<h1></div>
       <div class="max-w-[1200px] m-auto">
@@ -312,71 +244,6 @@ function buildHtmlSpeakers(products, productsTwo) {
                   </div>
               </div>
       </div>
-
-
-      <div class="grid grid-cols-3 justify-around w-full gap-10 my-20">
-        <div class="m-auto my-[4rem] md:my-[0] w-full flex justify-center ">
-                <div class=" bg-darkWhite w-full h-[200px] relative flex rounded-[10px]">
-                  <img  src="./assets/shared/desktop/image-category-thumbnail-headphones.png" 
-                      alt=""
-                      class=" w-[230px] absolute inset-x-[18%] top-[-80px] z-10 ">
-                  <div class=" w-[100%] absolute inset-y-[60%] text-center m-auto ">
-                    <h2 class="m-auto font-bold uppercase sans">eardphones</h2>
-                    <a href="speakers.html" class="text-gray-500 font-bold cursor-pointer uppercase">shop</a><span class="span-button-arrow "> > </span>
-                  </div>
-                </div>
-            </div>
-
-            <div class="m-auto my-[4rem] md:my-[0] w-full flex justify-center ">
-                <div class=" bg-darkWhite w-full h-[200px] relative flex rounded-[10px]">
-                  <img  src="./assets/shared/desktop/image-category-thumbnail-speakers.png" 
-                      alt=""
-                      class=" w-[230px] absolute inset-x-[18%] top-[-80px] z-10 ">
-                  <div class=" w-[100%] absolute inset-y-[60%] text-center m-auto ">
-                    <h2 class="m-auto font-bold uppercase sans">eardphones</h2>
-                    <a href="speakers.html" class="text-gray-500 font-bold cursor-pointer uppercase">shop</a><span class="span-button-arrow "> > </span>
-                  </div>
-                </div>
-            </div>
-
-            <div class="m-auto my-[4rem] md:my-[0] w-full flex justify-center ">
-                <div class=" bg-darkWhite w-full h-[200px] relative flex rounded-[10px]">
-                  <img  src="./assets/shared/desktop/image-category-thumbnail-earphones.png" 
-                      alt=""
-                      class=" w-[230px] absolute inset-x-[18%] top-[-80px] z-10 ">
-                  <div class=" w-[100%] absolute inset-y-[60%] text-center m-auto ">
-                    <h2 class="m-auto font-bold uppercase sans">eardphones</h2>
-                    <a href="speakers.html" class="text-gray-500 font-bold cursor-pointer uppercase">shop</a><span class="span-button-arrow "> > </span>
-                  </div>
-                </div>
-            </div>
-      </div>
-
-
-
-      <div>
-        <div class= "flex justify-center mx-auto my-40 w-full">
-              <div class= "grid grid-cols-2 justify-center gap-20">
-                  
-                  <div id="containerInf" class="m-auto p-10">
-                            <div class=""> <h1 class="text-[50px] font-bold m-0 uppercase  p-0">bringinyou the <span class="text-orange">best</span> audio gear</h1></div>
-                          <p class="text-[15px] font-semibold">Located at the heart of New York City, Audiophile is the premier store for high end headphones, earphones, speakers, and audio accessories. We have a large showroom and luxury demonstration rooms available for you to browse and experience a wide range of our products. Stop by our store to meet some of the fantastic people who make Audiophile the best place to buy your portable audio equipment..
-                          }</p>
-                  </div>
-
-                  <div id="containerImage" class="m-auto">
-                      <img
-                        src="./assets/shared/desktop/image-best-gear.jpg"
-                        alt=""
-                        class="rounded-lg w-full h-full"
-                      />
-                  </div>
-              </div>
-      </div>
-      
-      
-      </div>
-
       </div>
       <div>`;
         const element = htmlToElement(html);
@@ -409,10 +276,7 @@ function buildHtmlHeadphones(products, productsTwo, productsTree) {
                         </div>
                 </div>
         </div>
-        
           
-  
-  
         <div class= "flex justify-center mx-auto my-40 w-full">
                 <div class= "grid grid-cols-2 justify-center gap-20">
                     <div id="containerInf" class="m-auto p-10">
@@ -452,71 +316,6 @@ function buildHtmlHeadphones(products, productsTwo, productsTree) {
                         </div>
                 </div>
         </div>
-  
-  
-        <div class="grid grid-cols-3 justify-around w-full gap-10 my-20">
-          <div class="m-auto my-[4rem] md:my-[0] w-full flex justify-center ">
-                  <div class=" bg-darkWhite w-full h-[200px] relative flex rounded-[10px]">
-                    <img  src="./assets/shared/desktop/image-category-thumbnail-headphones.png" 
-                        alt=""
-                        class=" w-[230px] absolute inset-x-[18%] top-[-80px] z-10 ">
-                    <div class=" w-[100%] absolute inset-y-[60%] text-center m-auto ">
-                      <h2 class="m-auto font-bold uppercase sans">eardphones</h2>
-                      <a href="speakers.html" class="text-gray-500 font-bold cursor-pointer uppercase">shop</a><span class="span-button-arrow "> > </span>
-                    </div>
-                  </div>
-              </div>
-  
-              <div class="m-auto my-[4rem] md:my-[0] w-full flex justify-center ">
-                  <div class=" bg-darkWhite w-full h-[200px] relative flex rounded-[10px]">
-                    <img  src="./assets/shared/desktop/image-category-thumbnail-speakers.png" 
-                        alt=""
-                        class=" w-[230px] absolute inset-x-[18%] top-[-80px] z-10 ">
-                    <div class=" w-[100%] absolute inset-y-[60%] text-center m-auto ">
-                      <h2 class="m-auto font-bold uppercase sans">eardphones</h2>
-                      <a href="speakers.html" class="text-gray-500 font-bold cursor-pointer uppercase">shop</a><span class="span-button-arrow "> > </span>
-                    </div>
-                  </div>
-              </div>
-  
-              <div class="m-auto my-[4rem] md:my-[0] w-full flex justify-center ">
-                  <div class=" bg-darkWhite w-full h-[200px] relative flex rounded-[10px]">
-                    <img  src="./assets/shared/desktop/image-category-thumbnail-earphones.png" 
-                        alt=""
-                        class=" w-[230px] absolute inset-x-[18%] top-[-80px] z-10 ">
-                    <div class=" w-[100%] absolute inset-y-[60%] text-center m-auto ">
-                      <h2 class="m-auto font-bold uppercase sans">eardphones</h2>
-                      <a href="speakers.html" class="text-gray-500 font-bold cursor-pointer uppercase">shop</a><span class="span-button-arrow "> > </span>
-                    </div>
-                  </div>
-              </div>
-        </div>
-  
-  
-  
-        <div>
-          <div class= "flex justify-center mx-auto my-40 w-full">
-                <div class= "grid grid-cols-2 justify-center gap-20">
-                    
-                    <div id="containerInf" class="m-auto p-10">
-                              <div class=""> <h1 class="text-[50px] font-bold m-0 uppercase  p-0">bringinyou the <span class="text-orange">best</span> audio gear</h1></div>
-                            <p class="text-[15px] font-semibold">Located at the heart of New York City, Audiophile is the premier store for high end headphones, earphones, speakers, and audio accessories. We have a large showroom and luxury demonstration rooms available for you to browse and experience a wide range of our products. Stop by our store to meet some of the fantastic people who make Audiophile the best place to buy your portable audio equipment..
-                            }</p>
-                    </div>
-  
-                    <div id="containerImage" class="m-auto">
-                        <img
-                          src="./assets/shared/desktop/image-best-gear.jpg"
-                          alt=""
-                          class="rounded-lg w-full h-full"
-                        />
-                    </div>
-                </div>
-        </div>
-        
-        
-        </div>
-  
         </div>
         <div>`;
           const element = htmlToElement(html);
