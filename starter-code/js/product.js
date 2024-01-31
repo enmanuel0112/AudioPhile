@@ -1,5 +1,7 @@
 const heroContainer = document.getElementById("heroContainer");
 const productContainer =  document.getElementById("productContainer")
+const bodyContainer = document.getElementById("bodyContainer")
+const imagesContainer = document.getElementById("imagesContainer");
 document.addEventListener("DOMContentLoaded", function() {
     const links = document.querySelectorAll("nav a");
     links.forEach(link => {
@@ -8,6 +10,8 @@ document.addEventListener("DOMContentLoaded", function() {
             let category = link.innerHTML.toLowerCase();
             fetchData(category)
             heroContainer.classList.add("hidden");
+            bodyContainer.classList.add("hidden");
+            imagesContainer.classList.add("hidden");
             productContainer.innerHTML = ''
         });
     });
@@ -23,10 +27,13 @@ function fetchData(category) {
     return fetch("/starter-code/js/data.json")
     .then((response) => response.json())
     .then((data) => {
+      
         if(category === "home"){
           heroContainer.classList.remove("hidden");
+          bodyContainer.classList.remove("hidden");
+          imagesContainer.classList.remove("hidden");
         }else{
-            console.log(data);
+          setupButtonEventHandlers(data)
         const items = data.filter(item => item.category === category);
         displayProducts(items);
         }
@@ -35,7 +42,6 @@ function fetchData(category) {
 }
 
 function displayProducts(products) {
-    
     if (products.length == 2) {
        buildHtmlSpeakers(products[0], products[1]);
     } else if (products.length >= 3){
@@ -54,21 +60,19 @@ function displayProducts(products) {
 //         console.log(fetchData(category));
 //     }
 // });
-function setupButtonEventHandlers() {
-    // Suponiendo que todos los botones tienen la clase 'button-1-default'
+function setupButtonEventHandlers(products) {
     document.querySelectorAll('.button-1-default').forEach(button => {
         button.addEventListener('click', function() {
-            console.log('Botón clickeado:', this.id);
-            // Aquí puedes añadir lo que quieras hacer cuando el botón sea clickeado
+          const items = products.filter(item => item.id == this.id);
+          productContainer.innerHTML = ''
+          eardphonesDetail(items[0]);
         });
     });
 }
 
 function buildHtmlEarphones(products) {
-    console.log(products);
-  
       const html = `<div>
-        <div class="bg-black w-screen h-[300px] flex justify-center justify-items-center"><h1 class="text-center font-bold text-white text-[45px] m-auto">${products.category.toUpperCase()}<h1></div>
+        <div class="bg-black w-screen h-[400px] flex justify-center justify-items-center"><h1 class="text-center font-bold text-white text-[45px] m-auto">${products.category.toUpperCase()}<h1></div>
         <div class="max-w-[1200px] m-auto">
           
         <div class= "flex justify-center mx-auto my-40 w-full">
@@ -160,14 +164,14 @@ function buildHtmlEarphones(products) {
         </div>
         <div>`;
           const element = htmlToElement(html);
-          setupButtonEventHandlers();
+          let items = [products]
+          setupButtonEventHandlers(items);
       return element;
     }
 function buildHtmlSpeakers(products, productsTwo) {
-  console.log(products, productsTwo);
 
     const html = `<div>
-      <div class="bg-black w-screen h-[300px] flex justify-center justify-items-center"><h1 class="text-center font-bold text-white text-[45px] m-auto">${products.category.toUpperCase()}<h1></div>
+      <div class="bg-black w-screen h-[400px] flex justify-center justify-items-center"><h1 class="text-center font-bold text-white text-[45px] m-auto">${products.category.toUpperCase()}<h1></div>
       <div class="max-w-[1200px] m-auto">
         
 
@@ -282,13 +286,14 @@ function buildHtmlSpeakers(products, productsTwo) {
       </div>
       <div>`;
         const element = htmlToElement(html);
-        setupButtonEventHandlers();
+        let items = [products, productsTwo]
+        setupButtonEventHandlers(items);
     return element;
   }
 
-  function buildHtmlHeadphones(products, productsTwo, productsTree) {
+function buildHtmlHeadphones(products, productsTwo, productsTree) {
       const html = `<div>
-        <div class="bg-black w-screen h-[300px] flex justify-center justify-items-center"><h1 class="text-center font-bold text-white text-[45px] m-auto">${products.category.toUpperCase()}<h1></div>
+        <div class="bg-black w-screen h-[400px] flex justify-center justify-items-center"><h1 class="text-center font-bold text-white text-[45px] m-auto">${products.category.toUpperCase()}<h1></div>
         <div class="max-w-[1200px] m-auto">
         
         <div class= "flex justify-center mx-auto my-40 w-full">
@@ -421,9 +426,57 @@ function buildHtmlSpeakers(products, productsTwo) {
         </div>
         <div>`;
           const element = htmlToElement(html);
-          setupButtonEventHandlers()
+          let items = [products, productsTwo, productsTree]
+        setupButtonEventHandlers(items);
+          //setupButtonEventHandlers()
       return element;
     }
+  function eardphonesDetail(products){
+    console.log(products);
+    const html = `<div>
+    <div class="bg-black w-screen h-[100px] flex justify-center justify-items-center"></div>
+    <div class="max-w-[1200px] m-auto">
+    
+    <div class= "flex justify-center mx-auto my-40 w-full">
+            <div class= "grid grid-cols-2 justify-center gap-20">
+                    <div id="containerImage" class="m-auto">
+                        <img
+                        src="${products.image.desktop}"
+                        alt=""
+                        class="rounded-lg w-full h-full"
+                        />
+                    </div>
+
+                    <div id="containerInf" class="m-auto p-10">
+                            <div class=""> <h1 class="text-[50px] font-bold m-0">${products.name}</h1></div>
+                            <p class="text-[15px] font-semibold">${products.description}</p>
+                            <span class=" text-lg font-bold" >${products.price}<span>
+                        <button class="button-1-default my-2 uppercase" id="${products.id}">add to cart</button>
+                    </div>
+            </div>
+    </div>
+
+    <div class= "flex justify-center mx-auto my-40 w-full">
+            <div class= "grid grid-cols-2 justify-center gap-20">
+                    <div id="containerImage" class="m-auto">
+                        <p>${products.features}</p>
+                    </div>
+
+                    <div id="containerInf" class="m-auto p-10">
+                            <ul class="uppercase">In the box
+                              <li class="flex">
+                                <p>${products.includes[0].quantity}</p>
+                                <span class=" uppercase text-orange">x</span>
+                                <p>${ products.includes[0].item}</p>
+                              </li>
+                            </ul>
+                    </div>
+            </div>
+    </div>
+  </div>`
+  const element = htmlToElement(html);
+  return element
+  }
 
 
   function htmlToElement(html) {

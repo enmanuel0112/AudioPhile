@@ -12,46 +12,60 @@
 
   <title>Frontend Mentor | Audiophile e-commerce website</title>
 </head>
-
 <body>
 
-  <div class="m-auto absolute ">
-    <img src="./assets/home/desktop/image-hero.jpg" alt="" class="object-cover hidden xl:block "><!--hero Desktop-->
-    <img src="./assets/home/tablet/image-header.jpg" alt=""
-    class="object-cover  hidden md:block xl:hidden"><!--Hero Tablet-->
-    <img src="./assets/home/mobile/image-header.jpg" alt=""
-    class="object-cover block  md:hidden xl:hidden"><!--Hero mobil-->
-  </div>
 
-  <header class="w-screen m-auto relative bg-[#141414] h-32">
+
+  <header class="w-[100%] m-auto relative bg-red-700">
+
     <div class="background-body xl:hidden z-20" id="backgroundBody"></div><!--background-body-->
+      <div id="imagesContainer">
+        <img src="./assets/home/desktop/image-hero.jpg" alt="" class="object-cover hidden xl:block"><!--hero Desktop-->
+        <img src="./assets/home/tablet/image-header.jpg" alt=""
+          class="object-cover  hidden md:block xl:hidden"><!--Hero Tablet-->
+        <img src="./assets/home/mobile/image-header.jpg" alt=""
+          class="object-cover block  md:hidden xl:hidden"><!--Hero mobil-->
+      </div>
+      
     <div class="absolute inset-0 w-[90%] xl:w-[80%] m-auto">
       <div class="flex justify-between content-center items-center   w-[100%] m-auto ">
-
         <div class="flex justify-between items-center py-[2rem] z-30">
           <div class="mr-[3rem] xl:mr-[0]" id="menu">
-            <img src="./assets/shared/tablet/icon-hamburger.svg" alt="" class=" xl:hidden w-[25px] cursor-pointer">
-          </div>
+                <img src="./assets/shared/tablet/icon-hamburger.svg" alt="" class=" xl:hidden w-[25px] cursor-pointer">
+              </div>
+                  <h1 class="text-white text-[2rem] font-bold sans"> audiophile</h1>
+              </div><!--menu-->
+              <nav class="hidden xl:block">
+                <a href="#" class="text-white m-[1rem] p-[2rem] font-bold hover:text-orange duration-[0.5s] sans">HOME</a>
+                <a href="#"
+                  class="text-white m-[1rem] p-[2rem] font-bold hover:text-orange duration-[0.5s] sans">HEADPHONES</a>
+                <a href="#"
+                  class="text-white m-[1rem] p-[2rem] font-bold hover:text-orange duration-[0.5s] sans">SPEAKERS</a>
+                <a href="#"
+                  class="text-white m-[1rem] p-[2rem] font-bold hover:text-orange duration-[0.5s] sans">EARPHONES</a>
+              </nav>
+              <img src="./assets/shared/desktop/icon-cart.svg" alt="" class="w-[30px] h-[30px] cursor-pointer">
+          </div><!--Header Navegation-->
 
-          <h1 class="text-white text-[2rem] font-bold sans"> audiophile</h1>
-        </div><!--menu-->
+            <hr class=" w-[100%]  m-auto">
 
 
-        <nav class="hidden xl:block">
-          <a href="#" class="text-white m-[1rem] p-[2rem] font-bold hover:text-orange duration-[0.5s] sans">HOME</a>
-          <a href="headphones.html"
-            class="text-white m-[1rem] p-[2rem] font-bold hover:text-orange duration-[0.5s] sans">HEADPHONES</a>
-          <a href="speakers.html"
-            class="text-white m-[1rem] p-[2rem] font-bold hover:text-orange duration-[0.5s] sans">SPEAKERS</a>
-          <a href="earphones.html"
-            class="text-white m-[1rem] p-[2rem] font-bold hover:text-orange duration-[0.5s] sans">EARPHONES</a>
-        </nav>
+        <div class="absolute inset-y-[30%] w-[100%] xl:w-[35%] text-center xl:text-start " id="heroContainer">
+            <h3 class="text-gray-600 font-thin text-[1rem] -tracking-[-10px] mb-[25px] sans"> NEW PRODUCT</h3>
+            <h2
+              class="text-[2rem] md:text-[3rem] w-[100%] text-white leading-[40px]  md:leading-[60px] mb-[2rem] uppercase sans font-bold">
+              XX99 Mark II <br> Headphones</h2>
 
-        <img src="./assets/shared/desktop/icon-cart.svg" alt="" class="w-[30px] h-[30px] cursor-pointer">
-      </div><!--Header Navegation-->
-      <hr class=" w-[100%]  m-auto">
+            <div class="w-[100%]  xl:w-[75%] mb-[2rem] ">
+                <p class="text-gray-400 text-[1.1rem] sans w-[100%] md:w-[50%] xl:w-[100%] m-auto ">
+                  Experience natural, lifelike audio and exceptional build quality made for the passionate music enthusiast.
+                </p>
+            </div>
+            <button class="button-1-default hover:button-1-default-hover sans">SEE PRODUCT</button>
+          </div><!--Hero Container-->
+          
     </div> <!--hero-->
-    
+
 
     <!--Showing Menu-->
 
@@ -68,7 +82,7 @@
               <div class=" w-[100%] absolute inset-y-[50%] text-center m-auto ">
                 <h2 class="m-auto font-bold uppercase sans">headphones</h2>
 
-                <a href="headphones.html" class="text-gray-400 cursor-pointer uppercase">shop </a><span
+                <a href="#" class="text-gray-400 cursor-pointer uppercase">headphones</a><span
                   class="span-button-arrow "> > </span>
               </div>
 
@@ -83,7 +97,7 @@
             <div class="bg-darkWhite w-[350px] md:w-[200px] h-[200px] relative flex rounded-[10px]">
               <div class=" w-[100%] absolute inset-y-[50%] text-center m-auto ">
                 <h2 class="m-auto font-bold uppercase sans">speakers</h2>
-                <a href="speakers.html" class="text-gray-400 cursor-pointer  uppercase">shop </a><span
+                <a href="#" class="text-gray-400 cursor-pointer  uppercase prueba">speakers</a><span
                   class="span-button-arrow "> > </span>
               </div>
             </div>
@@ -97,9 +111,13 @@
               class=" w-[250px] md:w-[300px] absolute md:inset-y-[-35%] inset-y-[-50%] inset-x-[0] mx-auto md:inset-x-[0] z-10 ">
             <div class="bg-darkWhite w-[350px] md:w-[200px] h-[200px] relative flex rounded-[10px]">
               <div class=" w-[100%] absolute inset-y-[50%] text-center m-auto ">
-                <h2 class="m-auto font-bold uppercase sans">eardphones</h2>
-                <a href="speakers.html" class="text-gray-400 cursor-pointer uppercase">shop </a><span
+                <a href="#" class="m-auto font-bold uppercase sans" >earphones</a>
+           
+                <a class="text-gray-400 cursor-pointer uppercase prueba" href="earphones">shop
+                  <span
                   class="span-button-arrow "> > </span>
+                </a>
+                
               </div>
             </div>
           </div><!--earphones-->
@@ -108,32 +126,13 @@
         </div>
       </div>
     </section><!--Menu Shop-->
-    
-  </header>
-  <div id="productContainer"></div>
-<!-- aqui termina el header -------------------------------------------------------------------------------------------------------------------->
 
-<div id="heroContainer">
-<div class="z-10">
-  <div class="w-[100%] xl:w-[35%] text-center xl:text-start m-auto" >
-     <div class="m-auto">
-        <h3 class="text-gray-600 font-thin text-[1rem] -tracking-[-10px] mb-[25px] sans"> NEW PRODUCT</h3>
-        <h2
-          class="text-[2rem] md:text-[3rem] w-[100%] text-white leading-[40px]  md:leading-[60px] mb-[2rem] uppercase sans font-bold">
-          XX99 Mark II <br> Headphones</h2>
-        <div class="w-[100%]  xl:w-[75%] mb-[2rem] ">
-            <p class="text-gray-400 text-[1.1rem] sans w-[100%] md:w-[50%] xl:w-[100%] m-auto ">
-              Experience natural, lifelike audio and exceptional build quality made for the passionate music enthusiast.
-            </p>
-        </div>
-          <button class="button-1-default hover:button-1-default-hover sans  ">SEE PRODUCT</button>
-      </div><!--Hero Container-->
-  </div>
-</div>
+  </header>
 
   <div class="show-image"></div>
+<div id="productContainer"></div>
 
-
+  <div id="bodyContainer"> <!-- this div contained all the body -->
   <main>
 
     <section class=" mt-[10rem] md:mt-[15rem] w-[100%] flex  ">
@@ -147,7 +146,7 @@
             <div class="bg-darkWhite w-[300px] md:w-[250px] h-[200px] relative flex rounded-[10px]">
               <div class=" w-[100%] absolute inset-y-[50%] text-center m-auto ">
                 <h2 class="m-auto font-bold uppercase sans">headphone</h2>
-                <a href="headphones.html" class="text-gray-400 uppercase ">shop </a><span class="span-button-arrow "> >
+                <a href="#" class="text-gray-400 uppercase ">shop </a><span class="span-button-arrow "> >
                 </span>
               </div>
 
@@ -162,7 +161,7 @@
               <div class=" w-[100%] absolute inset-y-[50%] text-center m-auto ">
                 <h2 class="m-auto font-bold uppercase sans">speakers</h2>
 
-                <a href="speakers.html" class="text-gray-400 uppercase">shop </a><span class="span-button-arrow "> >
+                <a href="#" class="text-gray-400 uppercase">shop </a><span class="span-button-arrow "> >
                 </span>
               </div>
             </div>
@@ -175,7 +174,7 @@
             <div class="bg-darkWhite w-[300px] md:w-[250px] h-[200px] relative flex rounded-[10px]">
               <div class=" w-[100%] absolute inset-y-[50%] text-center m-auto ">
                 <h2 class="m-auto font-bold uppercase sans">earphones</h2>
-                <a href="earphones.html" class="text-gray-400 uppercase">shop </a><span class="span-button-arrow "> >
+                <a href="#" class="text-gray-400 uppercase">shop</a><span class="span-button-arrow "> >
                 </span>
               </div>
             </div>
@@ -286,6 +285,7 @@
 
   </main>
 </div>
+
   <footer class="bg-black flex">
 
     <div class="w-[90%]  m-auto flex flex-col text-center md:text-start py-[2rem]">
@@ -332,10 +332,9 @@
       </div>
 
     </div><!--Footer Container-->
+</footer>
 
-
-    <!-- <script type="module" src="./js/app.js"></script> -->
-    <script src="js/product.js"></script>
+    <script  src="./js/app.js"></script>
 
 
 </body>
