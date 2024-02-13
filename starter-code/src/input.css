@@ -5,27 +5,30 @@
 .button-1-default {
     @apply bg-orange py-[15px] px-[15px] text-white text-center text-[12px] font-light font-sans
 }
+
 .button-1-default:hover {
     @apply bg-lightOrange py-[15px] px-[15px] text-white text-center text-[12px] font-light font-sans
 }
 
+
 .button-2-default {
-    @apply bg-white p-[8px] text-black text-center  font-bold border-black  font-sans
+    @apply bg-white p-[8px] text-black text-center font-bold border-black font-sans
 }
+
 .button-2-default:hover {
-    @apply bg-black p-[8px] text-white text-center  font-bold border-black  font-sans
+    @apply bg-black p-[8px] text-white text-center font-bold border-black font-sans
 }
 
 .button-black-default {
-    @apply bg-black p-[1rem] text-white text-center  font-light border-black  font-sans
+    @apply bg-black p-[1rem] text-white text-center font-light border-black font-sans
 }
 
 .button-3-default {
-    @apply bg-white p-[8px] text-[#7a7979] text-center text-base  font-light font-sans 
+    @apply bg-white p-[8px] text-[#7a7979] text-center text-base font-light font-sans
 }
 
 .button-3-default:hover {
-    @apply bg-white p-[8px] text-orange text-center text-base  font-light font-sans 
+    @apply bg-white p-[8px] text-orange text-center text-base font-light font-sans
 }
 
 .span-button-arrow {
@@ -43,6 +46,12 @@
     transition: 0.5s ease-in-out;
 }
 
+.cart {
+    right: -100%;
+    visibility: hidden;
+    transition: 0.5s ease-in-out;
+}
+
 .menu-active {
     transition: 0.5s ease-in-out;
     display: block;
@@ -50,26 +59,33 @@
     visibility: visible;
 }
 
+.cart-active {
+    transition: 0.5s ease-in-out;
+    display: block;
+    transform: translateX(-100%);
+    visibility: visible;
+}
 
 .background-body {
-        position: fixed;
-        background: rgba(0,0,0,0.5);
-        width: 100%;
-        height: 100%;
-        top: 0;left: 0;
-        transition: all 0.5s ease;
-        visibility: hidden;
+    position: fixed;
+    background: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transition: all 0.5s ease;
+    visibility: hidden;
 
 }
 
-.background-body-active{
+.background-body-active {
     visibility: visible;
     transition: all 0.5s ease;
 
 }
 
 
-.btn-z-index-active{
+.btn-z-index-active {
     z-index: -1;
 
 }
